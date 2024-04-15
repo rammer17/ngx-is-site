@@ -1,0 +1,17 @@
+.text {
+  color: transparent;
+  background-image: linear-gradient(to left, #606060ff, #d6ed17ff, #606060ff);
+  background-clip: text;
+}
+.description {
+  max-width: 25rem;
+}
+.footer {
+  color: #606060ff;
+}
+
+.container-fluid {
+  background: rgb(17, 17, 17) !important;
+  background: linear-gradient(42deg, rgba(17, 17, 17, 1) 1%, rgba(49, 50, 39, 1) 75%) !important;
+  background-size: cover !important;
+}

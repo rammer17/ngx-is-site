@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div
+    class="container py-5 d-flex flex-column align-items-center position-relative"
+    style="height: 100vh">
+    <h1 class="text my-5">The Complete Component Library for Angular</h1>
+    <h4 class="text-secondary text-center description">
+      NGX-IS allows you to create adaptive and accessible interfaces for web apps of any shape or
+      size.
+    </h4>
+    <div class="w-25 d-flex justify-content-between">
+      <is-button
+        class="mt-5"
+        [styleClass]="'primary'"
+        [label]="'Get started'"
+        (onClick)="navigateToComponents()"
+        [icon]="'arrow-right'"></is-button>
+      <is-button
+        class="mt-5"
+        [styleClass]="'primary'"
+        [label]="'Star on GitHub'"
+        [icon]="'star'"></is-button>
+    </div>
+
+    <div class="w-100 my-5">
+      <h2 class="text mt-5">Designed for Angular applications</h2>
+      <h5 class="text-secondary description">
+        NGX-IS integrates directly with Angular and it's best features, including Component-Based
+        Architecture, Dependency Injection, Directives, TypeScript Integration, and much more.
+      </h5>
+    </div>
+
+    <div class="w-100 my-5 d-flex flex-column align-items-end">
+      <h2 class="text text-end mt-5">Enhanced with SCSS.</h2>
+      <h5 class="text-secondary text-end description">
+        SCSS offers enhanced CSS functionality with features like variables and nesting, making
+        stylesheets more maintainable and organized. Its support for mixins, inheritance, and
+        mathematical operations improves code reusability and promotes a modular approach to
+        styling, resulting in cleaner and more efficient CSS code.
+      </h5>
+    </div>
+    <div class="footer position-absolute" style="bottom: 2rem">
+      Built by
+      <a class="link-secondary" href="https://github.com/rammer17" target="_blank"
+        ><strong>Georgi Ivanov</strong></a
+      >. Open source and available on
+      <a class="link-secondary" href="https://github.com/rammer17/component-lib" target="_blank"
+        ><strong>GitHub</strong></a
+      >.
+    </div>
+  </div>
+</div>

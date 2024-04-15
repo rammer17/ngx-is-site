@@ -1,0 +1,405 @@
+<div class="container-fluid" style="min-height: 100vh">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-4">
+        <ul class="list-unstyled mb-5 mt-5">
+          <li class="fw-bold fs-5 text-light">Getting started</li>
+          <li
+            *ngFor="let item of gettingStarted"
+            class="component text-light fs-6 my-2 cursor-pointer"
+            (click)="onSelectComponent(item)">
+            {{ item.label }}
+          </li>
+        </ul>
+
+        <ul class="list-unstyled mt-4">
+          <li class="fw-bold fs-5 text-light">Components</li>
+          <li
+            *ngFor="let item of components"
+            class="component text-light fs-6 my-2 cursor-pointer"
+            [ngClass]="{ unavailable: !item.available }"
+            (click)="item.available ? onSelectComponent(item) : null">
+            {{ item.label }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-8 text-light" style="overflow-y: auto">
+        @switch (selectedComponent?.label) { @case ("Button") {
+        <div>
+          <h1>Button</h1>
+          <h6 class="mb-5 mt-3">Displays a button. Provides icons and theming.</h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>Import the button component, then you can just use it in your template</h6>
+          <pre>
+            <code>
+                import &#123; ButtonComponent &#125; from 'ngx-is';
+            </code>
+          </pre>
+
+          <h2>Examples</h2>
+          <hr />
+
+          <h3 class="mb-4 mt-5">Primary</h3>
+          <div class="playground">
+            <is-button [styleClass]="'primary'" label="Button"></is-button>
+          </div>
+
+          <h3 class="mb-4 mt-5">Secondary</h3>
+          <div class="playground">
+            <is-button [styleClass]="'secondary'" label="Button"></is-button>
+          </div>
+
+          <h3 class="mb-4 mt-5">Destructive</h3>
+          <div class="playground">
+            <is-button [styleClass]="'destructive'" label="Button"></is-button>
+          </div>
+
+          <h3 class="mb-4 mt-5">Ghost</h3>
+          <div class="playground">
+            <is-button [styleClass]="'ghost'" label="Button"></is-button>
+          </div>
+
+          <h3 class="mb-4 mt-5">Dashed</h3>
+          <div class="playground">
+            <is-button [styleClass]="'dashed'" label="Button"></is-button>
+          </div>
+
+          <h3 class="mb-4 mt-5">With icon</h3>
+          <div class="playground">
+            <is-button
+              [styleClass]="'primary'"
+              [icon]="'paper-plane'"
+              label="Send message"></is-button>
+          </div>
+
+          <h3 class="mb-4 mt-5">Loading</h3>
+          <div class="playground">
+            <is-button [styleClass]="'primary'" [loading]="true" label="Loading"></is-button>
+          </div>
+        </div>
+        } @case ("Introduction") {
+        <div>
+          <h1>Introduction</h1>
+          <h6 class="mb-5 mt-3">
+            <h4 class="fw-bold my-5">NGX-IS Goals</h4>
+            NGX-IS aims to provide a seamless user experience by creating intelligent and adaptive
+            UI elements that automatically conform to the unique aesthetic of your application. It
+            leverages native browser APIs and form elements, while also incorporating powerful
+            components, empowering developers to create user-centric web applications with ease.
+            <br />
+            <div class="fw-bold mt-4">Created by the community, for the community.</div>
+
+            <h4 class="fw-bold mt-5 mb-3">Benefits</h4>
+            <ul class="list-group bg-dark">
+              <li class="list-group-item bg-dark text-light py-4">
+                Faster Development: Leverage pre-built components to accelerate development and
+                reduce time-to-market.
+              </li>
+              <li class="list-group-item bg-dark text-light py-4">
+                Consistent Design: Ensure consistency across your applications with unified styles
+                and reusable elements.
+              </li>
+              <li class="list-group-item bg-dark text-light py-4">
+                Enhanced User Experience: Deliver intuitive and engaging interfaces that keep users
+                coming back.
+              </li>
+              <li class="list-group-item bg-dark text-light py-4">
+                Flexibility and Customization: Tailor components to fit your unique design
+                requirements with ease.
+              </li>
+            </ul>
+          </h6>
+        </div>
+        } @case ("Installation") {
+        <div>
+          <h1>Installation</h1>
+          <h6 class="mb-5 mt-3">
+            <h4 class="fw-bold my-5">NGX-IS Goals</h4>
+            NGX-IS aims to provide a seamless user experience by creating intelligent and adaptive
+            UI elements that automatically conform to the unique aesthetic of your application. It
+            leverages native browser APIs and form elements, while also incorporating powerful
+            components, empowering developers to create user-centric web applications with ease.
+            <br />
+            <div class="fw-bold mt-4">Created by the community, for the community.</div>
+
+            <h4 class="fw-bold mt-5 mb-3">Benefits</h4>
+            <ul class="list-group bg-dark">
+              <li class="list-group-item bg-dark text-light py-4">
+                Faster Development: Leverage pre-built components to accelerate development and
+                reduce time-to-market.
+              </li>
+              <li class="list-group-item bg-dark text-light py-4">
+                Consistent Design: Ensure consistency across your applications with unified styles
+                and reusable elements.
+              </li>
+              <li class="list-group-item bg-dark text-light py-4">
+                Enhanced User Experience: Deliver intuitive and engaging interfaces that keep users
+                coming back.
+              </li>
+              <li class="list-group-item bg-dark text-light py-4">
+                Flexibility and Customization: Tailor components to fit your unique design
+                requirements with ease.
+              </li>
+            </ul>
+          </h6>
+        </div>
+        } @case ("Data table") {
+        <div>
+          <h1>Data table</h1>
+          <h6 class="mb-5 mt-3">Powerful table component for displaying data in tabular format.</h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the data table component. To function properly an array of data must be provided
+            to the component. Optionally a list of actions and filters can be passed too. The
+            component handles sorting, filtering, toggling columns, paginating all on it's own, no
+            need for further configuring
+          </h6>
+          <pre>
+                      <code>
+                          import &#123; DataTableComponent &#125; from 'ngx-is';
+                      </code>
+                    </pre>
+
+          <h2>Example</h2>
+          <hr />
+          <div class="playground">
+            <is-data-table
+              [data]="data"
+              [filters]="['task', 'status']"
+              [actions]="['DELETE', 'change status']"></is-data-table>
+          </div>
+        </div>
+        } @case ("Input") {
+        <div>
+          <h1>Input</h1>
+          <h6 class="mb-5 mt-3">
+            Displays a form input field or a component that looks like an input field. Compatible
+            with FormsAPI and ngModel API
+          </h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the input component, then use it in your template. Provided are a bunch of
+            variant of the element
+          </h6>
+          <pre>
+                <code>
+                    import &#123; InputComponent &#125; from 'ngx-is';
+                </code>
+              </pre>
+
+          <h2>Examples</h2>
+          <hr />
+
+          <h3 class="mb-4 mt-5">Default</h3>
+          <div class="playground">
+            <is-input [placeholder]="'First name'"></is-input>
+          </div>
+
+          <h3 class="mb-4 mt-5">Disabled</h3>
+          <div class="playground">
+            <is-input [placeholder]="'First name'" [disabled]="true"></is-input>
+          </div>
+
+          <h3 class="mb-4 mt-5">File</h3>
+          <div class="playground">
+            <is-input [type]="'file'"></is-input>
+          </div>
+
+          <h3 class="mb-4 mt-5">With icon</h3>
+          <div class="playground">
+            <is-input [placeholder]="'Product'" [icon]="'plus'"></is-input>
+          </div>
+
+          <h3 class="mb-4 mt-5">Checkbox</h3>
+          <div class="playground">
+            <is-input [type]="'checkbox'"></is-input>
+          </div>
+
+          <h3 class="mb-4 mt-5">Valid</h3>
+          <div class="playground">
+            <is-input [placeholder]="'First name'" [valid]="true"></is-input>
+          </div>
+
+          <h3 class="mb-4 mt-5">Invalid</h3>
+          <div class="playground">
+            <is-input [placeholder]="'First name'" [invalid]="true"></is-input>
+          </div>
+        </div>
+        } @case ("Modal") {
+        <div>
+          <h1>Modal</h1>
+          <h6 class="mb-5 mt-3">
+            A window overlaid on either the primary window or another dialog window, rendering the
+            content underneath inert.
+          </h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the modal component, then use it in your template. Custom header and content
+            templates can be provided
+          </h6>
+          <pre>
+                    <code>
+                        import &#123; ModalComponent &#125; from 'ngx-is';
+                    </code>
+                  </pre>
+
+          <h2>Examples</h2>
+          <hr />
+          <div class="playground">
+            <is-modal
+              *ngIf="showModal"
+              (close)="showModal = false"
+              (submit)="showModal = false"></is-modal>
+            <is-button (onClick)="showModal = true" label="Show modal"></is-button>
+          </div>
+        </div>
+        } @case ("Popover") {
+        <div>
+          <h1>Popover</h1>
+          <h6 class="mb-5 mt-3">Displays rich content in a portal, triggered by a click.</h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the popover directive, then use it in your template. A template is required,
+            alongside a control managing visibility state
+          </h6>
+          <pre>
+                        <code>
+                            import &#123; PopoverDirective &#125; from 'ngx-is';
+                        </code>
+                      </pre>
+
+          <h2>Examples</h2>
+          <hr />
+          <div class="playground">
+            <div
+              [isPopover]="showPopover"
+              [template]="template"
+              appendTo="body"
+              [position]="'top'"
+              (click)="showPopover = !showPopover"
+              class="test-box">
+              This is a div
+            </div>
+            <ng-template #template
+              ><div class="default-thead-sort-template">
+                <div class="sort-options">
+                  <fa-icon [icon]="['fas', 'arrow-up-wide-short']"></fa-icon>
+                  Asc
+                </div>
+                <div class="sort-options">
+                  <fa-icon [icon]="['fas', 'arrow-down-short-wide']"></fa-icon>
+                  Desc
+                </div>
+                <div class="divider"></div>
+                <div class="sort-options">
+                  <fa-icon [icon]="['far', 'eye-slash']"></fa-icon>
+                  Hide
+                </div>
+              </div></ng-template
+            >
+          </div>
+        </div>
+        } @case ("Select") {
+        <div>
+          <h1>Select</h1>
+          <h6 class="mb-5 mt-3">Displays a list of options for the user to pick from.</h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the select component, then use it in your template. A list of option is required.
+            Compatible with FormsAPI and ngModel API
+          </h6>
+          <pre>
+                            <code>
+                                import &#123; SelectComponent &#125; from 'ngx-is';
+                            </code>
+                          </pre>
+
+          <h2>Examples</h2>
+          <hr />
+          <div class="playground">
+            <is-select [data]="options" [auto]="true"></is-select>
+          </div>
+        </div>
+        } @case ("Switch") {
+        <div>
+          <h1>Switch</h1>
+          <h6 class="mb-5 mt-3">
+            A control that allows the user to toggle between checked and not checked.
+          </h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the switch component, then use it in your template. Compatible with FormsAPI and
+            ngModel API
+          </h6>
+          <pre>
+                                <code>
+                                    import &#123; SwitchComponent &#125; from 'ngx-is';
+                                </code>
+                              </pre>
+
+          <h2>Examples</h2>
+          <hr />
+          <div class="playground">
+            <is-switch></is-switch>
+          </div>
+        </div>
+        } @case ("Table") {
+        <div>
+          <h1>Table</h1>
+          <h6 class="mb-5 mt-3">Simple table component for displaying data in tabular format.</h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the data table component. To function properly an array of data must be provided
+            to the component. This version only displays data. If you seek more functionality see
+            Data Table
+          </h6>
+          <pre>
+                      <code>
+                          import &#123; TableComponent &#125; from 'ngx-is';
+                      </code>
+                    </pre>
+
+          <h2>Example</h2>
+          <hr />
+          <div class="playground">
+            <is-table [data]="data2"></is-table>
+          </div>
+        </div>
+        } @case ("Tooltip") {
+        <div>
+          <h1>Tooltip</h1>
+          <h6 class="mb-5 mt-3">
+            A popup that displays information related to an element when the element receives
+            keyboard focus or the mouse hovers over it.
+          </h6>
+          <h2>Usage</h2>
+          <hr />
+          <h6>
+            Import the tooltip directive. then use it in your template. Text is required. Provided
+            are multiple positions, relative to host element
+          </h6>
+          <pre>
+                <code>
+                    import &#123; TooltipDirective &#125; from 'ngx-is';
+                </code>
+            </pre>
+
+          <h2>Example</h2>
+          <hr />
+          <div class="playground">
+            <is-button isTooltip tooltipText="This is a tooltip" [label]="'Hover me'"></is-button>
+          </div>
+        </div>
+        } }
+      </div>
+    </div>
+  </div>
+</div>
